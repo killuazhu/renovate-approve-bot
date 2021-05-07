@@ -16,7 +16,8 @@ RUN addgroup -g ${USER_GID} renovate \
     && apk add --no-cache make 
 
 USER renovate
-COPY --chown=renovate:renovate package.json package-lock.json ${APP_DIR}
+COPY --chown=renovate:renovate package.json ${APP_DIR}
+COPY --chown=renovate:renovate package-lock.json ${APP_DIR}
 
 RUN npm install
 
